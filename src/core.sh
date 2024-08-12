@@ -321,14 +321,6 @@ done
 
 #===
 #mv *.pdf ../
-mv ${aname}_${bname}.weighted_score ../${aname}_${bname}.one2many
-mv ${bname}_${aname}.weighted_score ../${bname}_${aname}.one2many
-mv ${aname}_${bname}.total ../${aname}_${bname}.one2one
-mv ${bname}_${aname}.total ../${bname}_${aname}.one2one
-mv ${aname}_${bname}.singleton ../
-mv ${bname}_${aname}.singleton ../
-mv ${aname}_${bname}.block_pos ${bname}_${aname}.block_pos ../
-mv ${aname}_${bname}.collinearity_info ${bname}_${aname}.collinearity_info ../
 cd ..
 
 cat ${aname}_${bname}.one2one | gawk -vOFS="\t" '{if($3=="RBH")print}' > ${aname}_${bname}.RBH
